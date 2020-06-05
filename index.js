@@ -10,9 +10,10 @@ const server = http.createServer((req, res) => {
     if (req.method == "GET") {
         var fileUrl, filepath, fileExt;
 
-        if (req.url == "/") fileUrl = "/index.html"   // or just "index.html" 
+        if (req.url == "/") fileUrl = "/index.html"   
         else fileUrl = req.url;
-        filepath = path.resolve("./" + fileUrl);
+
+        filepath =path.resolve("./" + fileUrl);
         fileExt = path.extname(filepath);
 
         if (fileExt == ".html") {
@@ -38,7 +39,7 @@ const server = http.createServer((req, res) => {
     else {
         res.statusCode = 404;
         res.setHeader("content-type", "text/html");
-        res.end(`<html><body> <h1>Error : 404 ${req.method} not supported.</h1> </body></html>`);
+        res.end(`<html><body> <h1>Error : 404 ${req.method} is not supported.</h1> </body></html>`);
     }
 })
 
