@@ -8,5 +8,6 @@
     "start": "node index"
   },
   "author": "Silvanus",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
